@@ -32,7 +32,7 @@ while opcion != 4:
         nombre = input("Introduce el nombre del nuevo artículo: ")
         nombre = nombre.capitalize()
         if nombre in listaCompra:
-            print("Error: El artículo ya se encuentra en la lista")
+            print(f"Error: El artículo {nombre} ya se encuentra en la lista.")
             print("")
             input("Pulsa una tecla para continuar...")
         else:
@@ -41,3 +41,31 @@ while opcion != 4:
             print("")
             input("Pulsa una tecla para continuar...")
 
+    if opcion == 2:
+        print("") # Hago un salto de línea.
+        nombre = input("Introduce el nombre del artículo a eliminar: ")
+        nombre = nombre.capitalize()
+        if nombre in listaCompra:
+            listaCompra.remove(nombre)
+            print(f"El artículo {nombre} ha sido eliminado correctamente de la lista de la compra.")
+            print("")
+            input("Pulsa una tecla para continuar...")
+        else:
+            print(f"Error: El artículo {nombre} NO se encuentra en la lista.")
+            print("")
+            input("Pulsa una tecla para continuar...")    
+
+    if opcion == 3:
+        print("") # Hago un salto de línea.
+        if listaCompra:
+            print("Lista de compra:")
+            for articulo in listaCompra: # Recorro la lista completa.
+                print(f"- {articulo}.")
+            print("")
+            input("Pulsa una tecla para continuar...") 
+        else:
+            print("Lista de compra vacía.")
+            print("")
+            input("Pulsa una tecla para continuar...")
+
+print("************  PROGRAMA FINALIZADO CORRECTAMENTE ************")

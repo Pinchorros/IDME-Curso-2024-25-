@@ -10,9 +10,26 @@ from os import system # Importo el comando "system" de la librería "os".
 # Declaración de variables:
 
 compra = {} # Diccionario que la lista de la compra.
-producto = "" # Nombre del artículo
-precio = "" # Precio del artículo
+producto = " " # Nombre del artículo
+precio = 0 # Precio del artículo
+importeTotal = 0 # Acumula el importe total de la compra.
 
 # Programa principal:
 
 system("cls") # Borra la pantalla.
+
+while producto != "": # Bucle para pedir los productos
+    producto = input("Teclea el producto (ENTER para finalizar): ")
+    if producto != "":
+        precio = float(input("Introduce el precio del producto: "))
+        compra[producto] = precio
+    print("") # Salto de línea para separar asignaturas.
+
+print("***** Lista de la compra *****")
+print("")
+for producto in compra:
+    print(f"Artículo: {producto}, precio: {compra[producto]}")
+    importeTotal = importeTotal + compra[producto]
+
+print("")
+print(f"Importe total compra: {importeTotal}")

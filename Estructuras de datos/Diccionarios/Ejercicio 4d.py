@@ -32,14 +32,14 @@ valido = False # Indicará si la combinación de usuario y contraseña es válid
 
 
 
-while numIntentos < 4 and valido == False:
+while numIntentos < 3 and valido == False:
     system("cls") # Borra la pantalla.
     usuario = input("Introduce el usuario: ")
     contraseña = input("Contraseña: ")
     numIntentos += 1
     if usuario in usuarios and contraseña == usuarios[usuario]["password"]:
         valido = True
-        print(f"Bienvenido@ {usuarios[usuario]["nombre"]} {usuarios[usuario]["apellidos"]["primerApellido"]} {usuarios[usuario]["apellidos"]["segundoApellido"]}")
+        print(f"Bienvenid@ {usuarios[usuario]["nombre"]} {usuarios[usuario]["apellidos"]["primerApellido"]} {usuarios[usuario]["apellidos"]["segundoApellido"]}")
     else:
         print(f"La combinación de usuario y contraseña no es válida!!. Te quedan {3 - numIntentos} intentos.")
         valido = False
